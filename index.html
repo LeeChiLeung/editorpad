@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>记事本</title>
+  </head>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    #edits{
+      width: 100%;
+      height:100%;
+      font-size: 14px;
+      position: fixed;/**绝对定位相对于浏览器窗口进行定位元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定**/
+      top: 0px;
+      bottom: 0px;
+    }
+  </style>
+  <script src="./renderer.js"></script>
+  <script src="./renderer-js/right-click.js"></script>
+  <script src="./static/codemirror-5.2/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="./static/codemirror-5.2/lib/codemirror.css">
+
+  <body>
+     <textarea  id="edits" ></textarea>
+     <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('edits'), {
+         lineNumbers: true
+       });
+     
+     </script>
+     <script src="./renderer-js/ipcRenderer.js"></script>
+     
+     
+    
+  </body>
+</html>
