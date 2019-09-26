@@ -10,8 +10,10 @@ var tamplateX = [
                 label: '打开',
                 accelerator:"CommandOrControl+O",
                 click: function () {
-                    console.log('dakai')
-                    BrowserWindow.getFocusedWindow().webContents.send('action', 'open');
+                    console.log('dakai');
+                    var d=BrowserWindow.getFocusedWindow();
+                  
+                    d.webContents.send('action', 'open');
                 }
             },
             {
@@ -115,7 +117,7 @@ var tamplateX = [
                     title: '关于',
                     message: '这是一个记事本,欢迎使用,版本0.0.1'
                 }, function (index) {
-
+                  
                 })
             }
         }]
@@ -123,3 +125,4 @@ var tamplateX = [
 ]
 var menu = Menu.buildFromTemplate(tamplateX);
 Menu.setApplicationMenu(menu);
+
